@@ -1,1 +1,0 @@
- cp package.json www/package.json && cd www && tar -c -f Archive.zip . && cd ..
