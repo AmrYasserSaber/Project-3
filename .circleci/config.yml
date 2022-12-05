@@ -64,12 +64,16 @@ jobs:
 workflows:
   udagram:
     jobs:
-      - build
-      - hold:
+      - build:
           filters:
             branches:
               only:
                 - master
+      - hold:
+          filters:
+            branches:
+              only:
+                - main
           type: approval
           requires:
             - build
