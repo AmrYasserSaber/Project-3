@@ -70,3 +70,8 @@ The e2e tests are using Protractor and Jasmine.
 ## License
 
 [License](LICENSE.txt)
+
+
+
+# Link of the app:
+http://udagram0512.s3-website-us-east-1.amazonaws.com/home
