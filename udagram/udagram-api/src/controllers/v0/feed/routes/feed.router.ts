@@ -18,7 +18,7 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
   }
 
   const token = tokenBearer[1];
-  return jwt.verify(token, c.config.jwt.secret, (err, decoded) => {
+  return jwt.verify(token, c.config.JWT_secret, (err, _decoded) => {
     if (err) {
       return res.status(500).send({auth: false, message: 'Failed to authenticate.'});
     }
@@ -27,7 +27,7 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
 }
 
 // Get all feed items
-router.get('/', async (req: Request, res: Response) => {
+router.get('/', async (_req: Request, res: Response) => {
   const items = await FeedItem.findAndCountAll({order: [['id', 'DESC']]});
   items.rows.map((item) => {
     if (item.url) {

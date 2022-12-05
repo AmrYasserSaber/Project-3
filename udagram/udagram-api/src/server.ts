@@ -7,7 +7,7 @@ import { IndexRouter } from "./controllers/v0/index.router";
 
 import bodyParser from "body-parser";
 import { V0_FEED_MODELS, V0_USER_MODELS } from "./controllers/v0/model.index";
-import * as env from "./config/config"
+import { config } from "./config/config";
 
 (async () => {
   dotenv.config();
@@ -53,9 +53,9 @@ import * as env from "./config/config"
   });
 
   // Start the Server
-  app.listen(env.config.Port, () => {
-    console.log(`Backend server is listening on port ${env.config.Port}....`);
-    console.log(`Frontent server running ${process.env.URL}`);
+  app.listen(config.Port, () => {
+    console.log(`Backend server is listening on port ${config.Port}....`);
+    console.log(`Frontent server running ${config.url}`);
     console.log(`press CTRL+C to stop server`);
   });
 })();

@@ -1,19 +1,19 @@
-import {Table, Column, Model, PrimaryKey, CreatedAt, UpdatedAt} from 'sequelize-typescript';
+import {Table, Column, Model, PrimaryKey, CreatedAt, UpdatedAt, DataType} from 'sequelize-typescript';
 
 @Table
 export class User extends Model<User> {
   @PrimaryKey
-  @Column
+  @Column({type:DataType.STRING})
   public email!: string;
 
-  @Column
+  @Column({type:DataType.STRING})
   public passwordHash!: string;
 
-  @Column
+  @Column({type:DataType.DATE})
   @CreatedAt
   public createdAt: Date = new Date();
 
-  @Column
+  @Column({type:DataType.DATE})
   @UpdatedAt
   public updatedAt: Date = new Date();
 

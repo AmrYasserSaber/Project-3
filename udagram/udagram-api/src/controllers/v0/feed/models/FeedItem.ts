@@ -1,19 +1,19 @@
-import {Table, Column, Model, CreatedAt, UpdatedAt} from 'sequelize-typescript';
+import {Table, Column, Model, CreatedAt, UpdatedAt, DataType} from 'sequelize-typescript';
 
 
 @Table
 export class FeedItem extends Model<FeedItem> {
-  @Column
-  public caption!: string;
+  @Column({type:DataType.STRING})
+   caption!: string;
 
-  @Column
-  public url!: string;
+  @Column({type:DataType.STRING})
+   url!: string;
 
-  @Column
+  @Column({type:DataType.DATE})
   @CreatedAt
-  public createdAt: Date = new Date();
+   createdAt: Date = new Date();
 
-  @Column
+  @Column({type:DataType.DATE})
   @UpdatedAt
-  public updatedAt: Date = new Date();
+   updatedAt: Date = new Date();
 }
