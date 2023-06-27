@@ -1,51 +1,83 @@
 # Hosting a Full-Stack Application
 
-### **You can use you own project completed in previous courses or use the provided Udagram app for completing this final project.**
+In this project, you will learn how to deploy a Full-Stack application to a cloud service provider, making it available to customers. You will use the AWS console to configure and start the necessary services, such as a database for storing product information and a web server for hosting the application. Additionally, you will modify your package.json scripts and replace hard-coded secrets with environment variables in your code.
 
----
+The following steps will guide you through the deployment process:
 
-In this project you will learn how to take a newly developed Full-Stack application built for a retailer and deploy it to a cloud service provider so that it is available to customers. You will use the aws console to start and configure the services the application needs such as a database to store product information and a web server allowing the site to be discovered by potential customers. You will modify your package.json scripts and replace hard coded secrets with environment variables in your code.
+## Step 1: Provision AWS Services
 
-After the initial setup, you will learn to interact with the services you started on aws and will deploy manually the application a first time to it. As you get more familiar with the services and interact with them through a CLI, you will gradually understand all the moving parts.
+1. Provision a publicly available RDS database running Postgres in AWS. You can access the AWS RDS console [here](https://us-east-1.console.aws.amazon.com/rds/home?region=us-east-1#database:id=database-1;is-cluster=false).
 
-You will then register for a free account on CircleCi and connect your Github account to it. Based on the manual steps used to deploy the app, you will write a config.yml file that will make the process reproducible in CircleCi. You will set up the process to be executed automatically based when code is pushed on the main Github branch.
+2. Provision an S3 bucket for hosting the uploaded files. You can access the AWS S3 console [here](https://s3.console.aws.amazon.com/s3/buckets/udagram0512?region=us-east-1&tab=objects).
 
-The project will also include writing documentation and runbooks covering the operations of the deployment process. Those runbooks will serve as a way to communicate with future developers and anybody involved in diagnosing outages of the Full-Stack application.
+3. Export the necessary environment variables or use a package like dotenv to manage them.
 
-# Udagram
+## Step 2: Set up the Backend API
 
-This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.
+1. From the root directory of the project, navigate to the `udagram-api` folder using the command:
+cd starter/udagram-api
 
 
+2. Install the required dependencies by running:
+npm install
+
+3. Start the API in development mode by running:
+npm run dev
 
 
-### Installation
+## Step 3: Set up the Frontend
 
-Provision the necessary AWS services needed for running the application:
+1. Without closing the terminal from the previous step, navigate to the `udagram-frontend` folder using the command:
+cd starter/udagram-frontend
 
-1. In AWS, provision a publicly available RDS database running Postgres. <https://us-east-1.console.aws.amazon.com/rds/home?region=us-east-1#database:id=database-1;is-cluster=false>
-1. In AWS, provision a s3 bucket for hosting the uploaded files. <https://s3.console.aws.amazon.com/s3/buckets/udagram0512?region=us-east-1&tab=objects>
-1. Export the ENV variables needed or use a package like [dotnev](https://www.npmjs.com/package/dotenv)/.
-1. From the root of the repo, navigate udagram-api folder `cd starter/udagram-api` to install the node_modules `npm install`. After installation is done start the api in dev mode with `npm run dev`.
-1. Without closing the terminal in step 1, navigate to the udagram-frontend `cd starter/udagram-frontend` to intall the node_modules `npm install`. After installation is done start the api in dev mode with `npm run start`.
 
-## Testing
+2. Install the required dependencies by running:
+npm install
 
-This project contains two different test suite: unit tests and End-To-End tests(e2e). Follow these steps to run the tests.
+3. Start the frontend server in development mode by running:
+npm run start
 
-1. `cd starter/udagram-frontend`
-1. `npm run test`
-1. `npm run e2e`
 
-There are no Unit test on the back-end
+## Step 4: Testing
+
+This project includes two types of tests: unit tests and end-to-end (e2e) tests. Follow these steps to run the tests:
 
 ### Unit Tests:
 
-Unit tests are using the Jasmine Framework.
+1. Navigate to the `udagram-frontend` folder using the command:
+cd starter/udagram-frontend
 
-### End to End Tests:
 
-The e2e tests are using Protractor and Jasmine.
+2. Run the unit tests using the command:
+npm run test
 
-# Link of the app:
-http://udagram0512.s3-website-us-east-1.amazonaws.com/home
+
+### End-to-End (e2e) Tests:
+
+1. Navigate to the `udagram-frontend` folder using the command:
+cd starter/udagram-frontend
+
+
+2. Run the e2e tests using the command:
+npm run e2e
+
+
+## Application Link
+
+You can access the deployed application using the following link: [Udagram App](http://udagram0512.s3-website-us-east-1.amazonaws.com/home)
+
+Please note that the provided link may change based on the deployment setup and configuration.
+
+Feel free to explore and interact with the application!
+
+## Additional Notes
+
+Make sure to replace any hard-coded secrets or sensitive information in your code with environment variables to maintain security and adhere to best practices.
+
+## Documentation and Runbooks
+
+As part of this project, it's important to provide documentation and runbooks covering the operations of the deployment process. These documents will serve as a guide for future developers and assist in troubleshooting any issues that may arise with the Full-Stack application.
+
+Remember to update and maintain these documents as necessary to ensure accurate and up-to-date information.
+
+If you have any questions or need further assistance, please feel free to ask. Happy hosting!
