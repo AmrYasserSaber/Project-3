@@ -6,9 +6,9 @@ The following steps will guide you through the deployment process:
 
 ## Step 1: Provision AWS Services
 
-1. Provision a publicly available RDS database running Postgres in AWS. You can access the AWS RDS console [here](https://us-east-1.console.aws.amazon.com/rds/home?region=us-east-1#database:id=database-1;is-cluster=false).
+1. Provision a publicly available RDS database running Postgres in AWS. You can access the AWS RDS console [here](https://us-east-1.console.aws.amazon.com/rds/home?region=us-east-1#database:id=database-1;is-cluster=false)(The application isn't hosted at the current time).
 
-2. Provision an S3 bucket for hosting the uploaded files. You can access the AWS S3 console [here](https://s3.console.aws.amazon.com/s3/buckets/udagram0512?region=us-east-1&tab=objects).
+2. Provision an S3 bucket for hosting the uploaded files. You can access the AWS S3 console [here](https://s3.console.aws.amazon.com/s3/buckets/udagram0512?region=us-east-1&tab=objects)(The application isn't hosted at the current time).
 
 3. Export the necessary environment variables or use a package like dotenv to manage them.
 
@@ -64,7 +64,7 @@ npm run e2e
 
 ## Application Link
 
-You can access the deployed application using the following link: [Udagram App](http://udagram0512.s3-website-us-east-1.amazonaws.com/home)
+You can access the deployed application using the following link: [Udagram App](http://udagram0512.s3-website-us-east-1.amazonaws.com/home) (The application isn't hosted at the current time).
 
 Please note that the provided link may change based on the deployment setup and configuration.
 
